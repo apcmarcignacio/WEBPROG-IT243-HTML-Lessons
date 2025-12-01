@@ -1,13 +1,14 @@
-body {
-  background-color: rgb(206, 221, 153);
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
 }
 
-h1 {
-  color: navy;
-  margin-left: 20px;
-}
-
-.center {
-  text-align: center;
-  color: rgb(102, 51, 4);
+.container div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
 }
