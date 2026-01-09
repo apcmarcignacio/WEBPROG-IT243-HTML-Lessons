@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>My First WEBPROG Heading</h1>
-<p>My first paragraph.</p>
+    <div class="container">
+        <div class="profile-wrapper">
+            <img src="assets/marc-id.jpg" alt="Profile" class="profile-img">
+        </div>
 
+        <h1>Marc</h1>
+        <p class="subtitle">2nd Year BSIT</p>
+
+        <div class="nav-grid">
+            <button class="nav-btn active" onclick="showSection('about', this)">About Me</button>
+            <button class="nav-btn" onclick="showSection('education', this)">Education</button>
+            <button class="nav-btn" onclick="showSection('hobbies', this)">Hobbies/Interests</button>
+            <button class="nav-btn" onclick="showSection('goals', this)">Goals in Life</button>
+        </div>
+
+        <div class="content-display">
+            
+            <div id="about" class="content-section active-content">
+                <h3 class="content-title">About Me</h3>
+                <p>
+                    Ever since I was a child, I had a deep fascination with computers. 
+                    It started as a simple curiosity about how components work together, 
+                    but quickly grew into a desire to understand the systems behind them. 
+                    Now, as a 2nd-year BSIT student, I am channeling that lifelong passion into Cloud Computing, 
+                    eager to learn how to build the virtual infrastructures of tomorrow.
+                </p>
+            </div>
+
+            <div id="education" class="content-section">
+                <h3 class="content-title">Education</h3>
+                <ul>
+                    <li><strong>Bachelor of Science in IT</strong><br>Current Studies</li>
+                    <br>
+                    <li><strong>Sta. Clara Parish School</strong><br>Senior High School Graduate</li>
+                    <li><em>Awarded with Honors and Highest in Physics</em></li>
+                </ul>
+            </div>
+
+            <div id="hobbies" class="content-section">
+                <h3 class="content-title">Hobbies & Interests</h3>
+                <ul>
+                    <li> <strong>Esports & Gaming:</strong> Strategy games and team coordination.</li>
+                    <li> <strong>Basketball:</strong> Physical training and varsity</li>
+                    <li> <strong>Music:</strong> Listening to various genres while doing my homework</li>
+                </ul>
+            </div>
+
+            <div id="goals" class="content-section">
+                <h3 class="content-title">Goals in Life</h3>
+                <ul>
+                    <li> <strong>Financial Freedom:</strong> Achieve independence to support wants and needs in life.</li>
+                    <li> <strong>Family:</strong> Provide for the people who supported me from when i have nothing to something.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId, btnElement) {
+            // 1. Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active-content');
+            });
+
+            // 2. Show the specific section clicked
+            document.getElementById(sectionId).classList.add('active-content');
+
+            // 3. Reset all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 4. Highlight the clicked button
+            btnElement.classList.add('active');
+        }
+    </script>
 </body>
 </html>
